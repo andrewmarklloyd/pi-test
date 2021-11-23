@@ -19,4 +19,4 @@ jobs:
         goarch: ${{ matrix.goarch }}
         project_path: "./"
         binary_name: "pi-test"
-        extra_files: install/run.sh
+        extra_files: install/run.sh .pi-app-updater.yaml
