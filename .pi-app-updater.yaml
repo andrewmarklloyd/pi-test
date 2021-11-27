@@ -1,5 +1,5 @@
 name: pi-test
 heroku:
-  app: pi-test
+  app: pi-app-updater-test
   env:
   - SENSOR_SOURCE
