@@ -1,4 +1,5 @@
 name: pi-test
-env:
-  - HEROKU_API_KEY
+heroku:
+  app: pi-test
+  env:
   - SENSOR_SOURCE
