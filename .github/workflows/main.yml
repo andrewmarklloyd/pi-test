@@ -26,3 +26,15 @@ jobs:
         with:
           name: binary
           path: ./pi-test
+      - name: Trigger pi-app-updater
+        run: |
+          echo $GITHUB_ACTION
+          echo $GITHUB_ACTION_REPOSITORY
+          echo $GITHUB_EVENT_NAME
+          echo $GITHUB_JOB
+          echo $GITHUB_REF
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_RUN_ID
+          echo $GITHUB_SHA
+
+# curl -X POST -d '{"data":"here"}' https://pi-app-updater.herokuapp.com/cool-things
