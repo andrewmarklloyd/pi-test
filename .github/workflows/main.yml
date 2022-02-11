@@ -24,8 +24,9 @@ jobs:
           golint .
       - uses: actions/upload-artifact@v2
         with:
-          name: binary
+          name: "${GITHUB_SHA}_app"
           path: ./pi-test
+      # send notification that asset is uploaded. need to get url, otherwise server will have to query and find it
       - name: Trigger pi-app-updater
         run: |
           echo $GITHUB_ACTION
@@ -37,4 +38,5 @@ jobs:
           echo $GITHUB_RUN_ID
           echo $GITHUB_SHA
 
-# curl -X POST -d '{"data":"here"}' https://pi-app-updater.herokuapp.com/cool-things
+
+# curl -X POST -d '{"artifact":"${GITHUB_SHA}_app"}' https://pi-app-updater.herokuapp.com/cool-things
