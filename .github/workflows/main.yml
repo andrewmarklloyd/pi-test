@@ -29,4 +29,4 @@ jobs:
       # send notification that asset is uploaded. need to get url, otherwise server will have to query and find it
       - name: Trigger pi-app-updater
         run: |
-          curl -X POST -d '{"sha":"${{ github.sha }}","repository":"${{ github.repository }}","artifact":"app_${{ github.sha }}"}' https://36d3-2601-603-400-926-81d7-721-8426-f1f0.ngrok.io/push
+          curl -X POST -d '{"sha":"${{ github.sha }}","repository":"${{ github.repository }}","artifact":"app_${{ github.sha }}"}' https://121e-2601-603-400-926-81d7-721-8426-f1f0.ngrok.io/push
