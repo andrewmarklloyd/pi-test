@@ -22,7 +22,7 @@ jobs:
         run: |
           go vet .
           golint .
-      # - uses: actions/upload-artifact@v2
-      #   with:
-      #     name: my-artifact
-      #     path: README.md
+      - uses: actions/upload-artifact@v2
+        with:
+          name: binary
+          path: ./pi-test
