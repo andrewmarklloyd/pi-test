@@ -24,19 +24,9 @@ jobs:
           golint .
       - uses: actions/upload-artifact@v2
         with:
-          name: "${GITHUB_SHA}_app"
+          name: app_${{ github.sha }}
           path: ./pi-test
       # send notification that asset is uploaded. need to get url, otherwise server will have to query and find it
       - name: Trigger pi-app-updater
         run: |
-          echo $GITHUB_ACTION
-          echo $GITHUB_ACTION_REPOSITORY
-          echo $GITHUB_EVENT_NAME
-          echo $GITHUB_JOB
-          echo $GITHUB_REF
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_RUN_ID
-          echo $GITHUB_SHA
-
-
-# curl -X POST -d '{"artifact":"${GITHUB_SHA}_app"}' https://pi-app-updater.herokuapp.com/cool-things
+          echo curl -X POST -d '{"artifact":"app_${{ github.sha }}"}' https://pi-app-updater.herokuapp.com/cool-things
