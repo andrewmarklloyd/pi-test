@@ -26,11 +26,12 @@ jobs:
         with:
           name: app_${{ github.sha }}
           path: ./pi-test
-      # send notification that asset is uploaded. need to get url, otherwise server will have to query and find it
-      - name: Trigger pi-app-updater
+  deploy:
+    needs: [build]
+    steps:
+      - name: Trigger Deploy
         run: |
           ./.github/workflows/check-artifact.sh
-
 
 
 # # need to wait until artifact is finished uploading
