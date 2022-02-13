@@ -1,9 +1,10 @@
 #!/bin/bash
 
+
 retries=0
 found=false
 while [[ ${found} == false ]]; do
-  artifacts=$(curl -s -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/andrewmarklloyd/pi-test/actions/artifacts | grep app_${{ github.sha }})
+  artifacts=$(curl -s -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/andrewmarklloyd/pi-test/actions/artifacts | grep "app_${GITHUB_SHA}")
   if [[ ! -z ${artifacts} ]]; then
     found=true
   else
