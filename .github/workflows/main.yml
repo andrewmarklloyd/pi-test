@@ -28,6 +28,7 @@ jobs:
           path: ./pi-test
   deploy:
     needs: [build]
+    runs-on: ubuntu-latest
     steps:
       - name: Trigger Deploy
         run: |
