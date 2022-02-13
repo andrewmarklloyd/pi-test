@@ -32,10 +32,9 @@ jobs:
     steps:
       - name: Trigger Deploy
         run: |
-          echo ${GITHUB_WORKSPACE}
-          echo ${RUNNER_TEMP}
-          ls -al ${GITHUB_WORKSPACE}
-          ${GITHUB_WORKSPACE}/.github/workflows/check-artifact.sh
+          ls -al ${GITHUB_WORKSPACE}/../
+          ls -al ${RUNNER_TEMP}
+          ${GITHUB_WORKSPACE}/../.github/workflows/check-artifact.sh
 
 
 # # need to wait until artifact is finished uploading
