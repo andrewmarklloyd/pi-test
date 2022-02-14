@@ -12,5 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Deploy
+        env:
+          PI_APP_UPDATER_API_KEY: ${{ secrets.PI_APP_UPDATER_API_KEY }}
         run: |
-          curl -s -X POST -d '{"sha":"${{ github.sha }}","repository":"${{ github.repository }}","artifact_name":"app_${{ github.sha }}"}' https://pi-app-updater-server.herokuapp.com/push
+          curl -s -X POST -H "api-key: ${PI_APP_UPDATER_API_KEY}" -d '{"sha":"${{ github.sha }}","repository":"${{ github.repository }}","artifact_name":"app_${{ github.sha }}"}' https://pi-app-updater-server.herokuapp.com/push
