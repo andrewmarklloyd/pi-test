@@ -13,4 +13,4 @@ jobs:
     steps:
       - name: Trigger Deploy
         run: |
-          curl -s -X POST -d '{"sha":"${{ github.sha }}","repository":"${{ github.repository }}","artifact":"app_${{ github.sha }}"}' https://https://pi-app-updater-server.herokuapp.com/push
+          curl -s -X POST -d '{"sha":"${{ github.sha }}","repository":"${{ github.repository }}","artifact":"app_${{ github.sha }}"}' https://pi-app-updater-server.herokuapp.com/push
