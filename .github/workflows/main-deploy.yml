@@ -1,0 +1,16 @@
+name: Main Deploy
+
+on:
+  workflow_run:
+    workflows: ["Main Build"]
+    branches: [main]
+    types: 
+      - completed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Deploy
+        run: |
+          curl -s -X POST -d '{"sha":"${{ github.sha }}","repository":"${{ github.repository }}","artifact":"app_${{ github.sha }}"}' https://93e2-2601-603-400-926-81d7-721-8426-f1f0.ngrok.io/push

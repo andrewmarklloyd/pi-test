@@ -1,4 +1,4 @@
-name: Main
+name: Main Build
 
 on:
   push:
@@ -26,6 +26,6 @@ jobs:
         with:
           name: app_${{ github.sha }}
           path: ./pi-test
-      - name: Trigger Deploy
-        run: |
-          curl -s -X POST -d '{"sha":"${{ github.sha }}","repository":"${{ github.repository }}","artifact":"app_${{ github.sha }}"}' https://e3e7-2601-603-400-926-81d7-721-8426-f1f0.ngrok.io/push
+      # - name: Trigger Deploy
+      #   run: |
+      #     curl -s -X POST -d '{"sha":"${{ github.sha }}","repository":"${{ github.repository }}","artifact":"app_${{ github.sha }}"}' https://e3e7-2601-603-400-926-81d7-721-8426-f1f0.ngrok.io/push
