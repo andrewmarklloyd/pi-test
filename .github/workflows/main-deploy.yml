@@ -15,4 +15,5 @@ jobs:
         env:
           PI_APP_UPDATER_API_KEY: ${{ secrets.PI_APP_UPDATER_API_KEY }}
         run: |
+          which jq
           curl -s -X POST -H "api-key: ${PI_APP_UPDATER_API_KEY}" -d '{"sha":"${{ github.sha }}","repository":"${{ github.repository }}","artifact_name":"app_${{ github.sha }}"}' https://pi-app-updater.herokuapp.com/push
