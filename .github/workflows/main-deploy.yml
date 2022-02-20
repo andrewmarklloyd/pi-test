@@ -16,4 +16,5 @@ jobs:
           PI_APP_UPDATER_API_KEY: ${{ secrets.PI_APP_UPDATER_API_KEY }}
         run: |
           response=$(curl -s -X POST -H "api-key: ${PI_APP_UPDATER_API_KEY}" -d '{"sha":"${{ github.sha }}","repository":"${{ github.repository }}","name":"app_${{ github.sha }}"}' https://pi-app-updater.herokuapp.com/push)
+          echo ${response}
           if [[ $(echo ${response} | jq -r '.status') != "success" ]]; then echo ${response};exit 1; fi
