@@ -16,7 +16,7 @@ func main() {
 	fmt.Println("Running application now, version:", string(dat))
 	var cronLib *cron.Cron
 	cronLib = cron.New()
-	cronLib.AddFunc("@every 15s", func() {
+	cronLib.AddFunc("@every 5m", func() {
 		fmt.Println("")
 	})
 	cronLib.Start()
