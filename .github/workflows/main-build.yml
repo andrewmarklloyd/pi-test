@@ -22,9 +22,11 @@ jobs:
         run: |
           go vet .
           golint .
+      # - name: TODO add manifest validation
       - uses: actions/upload-artifact@v2
         with:
           name: app_${{ github.sha }}
           path: |
-            pi-test
+            # todo: get the executable from the manifest
+            pi-test-agent
             .pi-app-updater.yaml
