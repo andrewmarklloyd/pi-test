@@ -2,14 +2,18 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/robfig/cron/v3"
 )
 
 func main() {
-
-	fmt.Println("Running application now")
+	dat, err := os.ReadFile("/home/pi/.pi-test.version")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("Running application now, version:", string(dat))
 	var cronLib *cron.Cron
 	cronLib = cron.New()
 	cronLib.AddFunc("@every 15s", func() {
