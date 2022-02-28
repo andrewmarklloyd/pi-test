@@ -9,11 +9,11 @@ import (
 )
 
 func main() {
-	dat, err := os.ReadFile("/home/pi/.pi-test.version")
-	if err != nil {
-		panic(err)
+	version := os.Getenv("APP_VERSION")
+	if version == "" {
+		version = "unknown"
 	}
-	fmt.Println("Running application now, version:", string(dat))
+	fmt.Println("Running application now, version:", version)
 	var cronLib *cron.Cron
 	cronLib = cron.New()
 	cronLib.AddFunc("@every 5m", func() {
