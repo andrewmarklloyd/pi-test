@@ -1,6 +1,6 @@
 name: pi-test
 executable: pi-test-agent
 heroku:
-  app: pi-app-updater-test
+  app: pi-app-deployer-test
   env:
   - SENSOR_SOURCE

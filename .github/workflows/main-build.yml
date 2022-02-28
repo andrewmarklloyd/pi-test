@@ -29,4 +29,4 @@ jobs:
           path: |
             # todo: get the executable from the manifest
             pi-test-agent
-            .pi-app-updater.yaml
+            .pi-app-deployer.yaml
