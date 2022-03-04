@@ -15,6 +15,6 @@ jobs:
         env:
           PI_APP_DEPLOYER_API_KEY: ${{ secrets.PI_APP_DEPLOYER_API_KEY }}
         run: |
-          response=$(curl -s -X POST -H "api-key: ${PI_APP_DEPLOYER_API_KEY}" -d '{"sha":"${{ github.sha }}","repository":"${{ github.repository }}","name":"app_${{ github.sha }}"}' https://pi-app-deployer.herokuapp.com/push)
+          response=$(curl -s -X POST -H "api-key: ${PI_APP_DEPLOYER_API_KEY}" -d '{"sha":"${{ github.sha }}","repository":"${{ github.repository }}","name":"app_${{ github.sha }}","manifest_name","pi-test"}' https://pi-app-deployer.herokuapp.com/push)
           echo ${response}
           if [[ $(echo ${response} | jq -r '.status') != "success" ]]; then echo ${response};exit 1; fi
