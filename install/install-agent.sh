@@ -43,4 +43,19 @@ done
 version=$(get_latest_release)
 curl -sL https://github.com/andrewmarklloyd/pi-app-deployer/releases/download/${version}/pi-app-deployer-agent-${version}-linux-arm.tar.gz | tar zx -C /tmp
 
-mv /tmp/pi-app-deployer-agent ${HOME}
+mv /tmp/pi-app-deployer-agent ${HOME}/pi-app-deployer-agent
+
+if [[ -z ${repo} && -z ${manifestName} ]]; then
+  echo "Enter the repo name including the org then press enter:"
+  read repo
+
+  echo "Enter the pi-app-deployer manifest name then press enter:"
+  read manifestName
+fi
+
+echo "Running the pi-app-deployer-agent installer using the following command:"
+
+c="/home/pi/pi-app-deployer-agent --repo-name ${repo} --manifest-name ${manifestName} --install"
+echo "${c}"
+
+eval ${c}

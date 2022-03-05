@@ -36,5 +36,4 @@ jobs:
     - uses: actions/checkout@v2
     - name: test
       run: |
-        ls
-        ./install/install-agent.sh
+        sudo repo=andrewmarklloyd/pi-test manifestName=pi-test ./install/install-agent.sh
