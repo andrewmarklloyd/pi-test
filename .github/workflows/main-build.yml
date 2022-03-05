@@ -30,3 +30,9 @@ jobs:
             # todo: get the executable from the manifest
             pi-test-agent
             .pi-app-deployer.yaml
+  integration:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: test
+      run: |
+        systemctl status
