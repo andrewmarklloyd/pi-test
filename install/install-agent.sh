@@ -55,7 +55,7 @@ fi
 
 echo "Running the pi-app-deployer-agent installer using the following command:"
 
-c="/home/pi/pi-app-deployer-agent --repo-name ${repo} --manifest-name ${manifestName} --install"
+c="${HOME}/pi-app-deployer-agent --repo-name ${repo} --manifest-name ${manifestName} --install"
 echo "${c}"
 
 eval ${c}
