@@ -30,12 +30,3 @@ jobs:
             # todo: get the executable from the manifest
             pi-test-agent
             .pi-app-deployer.yaml
-  integration:
-    runs-on: ubuntu-20.04
-    steps:
-    - uses: actions/checkout@v2
-    - name: test
-      env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: |
-        sudo HEROKU_API_KEY=${HEROKU_API_KEY} repo=andrewmarklloyd/pi-test manifestName=pi-test ./install/install-agent.sh
