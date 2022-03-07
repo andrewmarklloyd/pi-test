@@ -1,7 +1,7 @@
 apiVersion: pi-app-deployer/v1
 kind: Manifest
 name: pi-test
-executable: pi-test-agent
+executable: pi-test-agent-amd64
 heroku:
   app: pi-app-deployer-test
   env:
