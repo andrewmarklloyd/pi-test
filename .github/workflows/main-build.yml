@@ -20,7 +20,7 @@ jobs:
         run: make build
       - name: Run vet & lint
         run: |
-          uname -m
+          uname -a
           go env GOOS GOARCH
           go vet .
           golint .
