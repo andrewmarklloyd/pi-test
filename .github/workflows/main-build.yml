@@ -28,5 +28,6 @@ jobs:
           name: app_${{ github.sha }}
           path: |
             # todo: get the executable from the manifest
-            pi-test-agent
+            pi-test-agent-arm
+            pi-test-agent-amd64
             .pi-app-deployer.yaml
