@@ -20,6 +20,8 @@ jobs:
         run: make build
       - name: Run vet & lint
         run: |
+          uname -m
+          go env GOOS GOARCH
           go vet .
           golint .
       # - name: TODO add manifest validation
