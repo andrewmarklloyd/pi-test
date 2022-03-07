@@ -1,17 +1,17 @@
 apiVersion: pi-app-deployer/v1
 kind: Manifest
-name: pi-test
+name: pi-test-amd64
 executable: pi-test-agent-amd64
-# executable:
-#   platforms:
-#     amd64: pi-test-agent-amd64
-#     arm: pi-test-agent-arm
 heroku:
   app: pi-app-deployer-test
   env:
   - SENSOR_SOURCE
-
-# # need to support different executables for different platforms
-# armv6l
-# aarch64
-# arm64
+---
+apiVersion: pi-app-deployer/v1
+kind: Manifest
+name: pi-test-arm
+executable: pi-test-agent-arm
+heroku:
+  app: pi-app-deployer-test
+  env:
+  - SENSOR_SOURCE
