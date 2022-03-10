@@ -15,4 +15,6 @@ jobs:
       - name: Trigger Deploy
         env:
           PI_APP_DEPLOYER_API_KEY: ${{ secrets.PI_APP_DEPLOYER_API_KEY }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_SHA: ${{ github.sha }}
         run: ./deploy.sh
