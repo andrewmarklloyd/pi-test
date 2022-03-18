@@ -7,4 +7,4 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: andrewmarklloyd/pi-app-deployer-action@v2
+        uses: andrewmarklloyd/pi-app-deployer-action@main
