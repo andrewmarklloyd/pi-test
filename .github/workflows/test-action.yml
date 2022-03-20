@@ -1,10 +1,11 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  pi_app_deployer:
     runs-on: ubuntu-latest
-    name: Test Deployer
+    name: Pi App Deployer
     steps:
-      - name: Hello world action step
-        id: hello
+      - name: Deploy Application
         uses: andrewmarklloyd/pi-app-deployer-action@main
+        env:
+          PI_APP_DEPLOYER_API_KEY: ${{ secrets.PI_APP_DEPLOYER_API_KEY }}
