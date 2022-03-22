@@ -8,12 +8,14 @@ on:
       - completed
 
 jobs:
-  build:
+  pi_app_deployer:
     runs-on: ubuntu-latest
+    name: Pi App Deployer
     steps:
-      - uses: actions/checkout@v2
-      - name: Trigger Deploy
+      - name: Deploy Application
+        uses: andrewmarklloyd/pi-app-deployer-action@main
         env:
           PI_APP_DEPLOYER_API_KEY: ${{ secrets.PI_APP_DEPLOYER_API_KEY }}
-          GITHUB_SHA: ${{ github.sha }}
-        run: ./deploy.sh
+        with:
+          repoName: andrewmarklloyd/pi-test
+          manifestName: pi-test-arm
