@@ -6,6 +6,8 @@ heroku:
   app: pi-app-deployer-test
   env:
   - SENSOR_SOURCE
+env:
+  - MY_CONFIG
 ---
 apiVersion: pi-app-deployer/v1
 kind: Manifest
@@ -15,3 +17,5 @@ heroku:
   app: pi-app-deployer-test
   env:
   - SENSOR_SOURCE
+env:
+  - MY_CONFIG
