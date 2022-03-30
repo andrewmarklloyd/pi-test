@@ -3,7 +3,7 @@ kind: Manifest
 name: pi-test-amd64
 executable: pi-test-agent-amd64
 heroku:
-  app: pi-app-deployer-test
+  app: pi-app-deployer-staging
   env:
   - SENSOR_SOURCE
 env:
@@ -14,7 +14,7 @@ kind: Manifest
 name: pi-test-arm
 executable: pi-test-agent-arm
 heroku:
-  app: pi-app-deployer-test
+  app: pi-app-deployer-staging
   env:
   - SENSOR_SOURCE
 env:
