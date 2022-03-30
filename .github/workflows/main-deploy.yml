@@ -18,4 +18,4 @@ jobs:
           PI_APP_DEPLOYER_API_KEY: ${{ secrets.PI_APP_DEPLOYER_API_KEY }}
         with:
           repoName: andrewmarklloyd/pi-test
-          manifestName: pi-test-arm
+          manifestName: pi-test-amd64
