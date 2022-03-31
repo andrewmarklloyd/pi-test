@@ -19,3 +19,4 @@ jobs:
         with:
           repoName: andrewmarklloyd/pi-test
           manifestName: pi-test-amd64
+          host: https://pi-app-deployer-staging.herokuapp.com
