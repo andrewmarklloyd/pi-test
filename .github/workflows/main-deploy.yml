@@ -18,6 +18,8 @@ jobs:
         run: |
           line=$(tail -n 1 test/integration-trigger.txt)
           arr=($(echo $line | tr ";" "\n"))
+          echo $line
+          echo $arr
           echo ::set-output name=DEPLOYER_HOST::$(echo ${arr[2]})
       - name: Deploy Application
         uses: andrewmarklloyd/pi-app-deployer-action@main
