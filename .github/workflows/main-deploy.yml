@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Pi App Deployer
     steps:
+      - uses: actions/checkout@v2
       - name: Get deployer host
         run: |
           line=$(tail -n 1 test/integration-trigger.txt)
