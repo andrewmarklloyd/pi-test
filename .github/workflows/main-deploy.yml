@@ -14,6 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Get deployer host
+        id: vars
         run: |
           line=$(tail -n 1 test/integration-trigger.txt)
           arr=($(echo $line | tr ";" "\n"))
