@@ -12,6 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     name: Pi App Deployer
     steps:
+      - name: Get deployer host
+        run: |
+          line=$(tail -n 1 test/integration-trigger.txt)
+          arr=($(echo $line | tr ";" "\n"))
+          echo ::set-output name=DEPLOYER_HOST::$(echo ${arr[2]})
       - name: Deploy Application
         uses: andrewmarklloyd/pi-app-deployer-action@main
         env:
@@ -19,4 +24,4 @@ jobs:
         with:
           repoName: andrewmarklloyd/pi-test
           manifestName: pi-test-amd64
-          host: https://pi-app-deployer-staging.herokuapp.com
+          host: https://${{ steps.vars.outputs.DEPLOYER_HOST }}.herokuapp.com
