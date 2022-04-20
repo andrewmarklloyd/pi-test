@@ -13,16 +13,13 @@ jobs:
     name: Pi App Deployer
     steps:
       - uses: actions/checkout@v2
-      - name: Get deployer host
+      - name: Get deployer vars
         id: vars
-        run: |
-          line=$(tail -n 1 test/integration-trigger.txt)
-          arr=($(echo $line | tr ";" "\n"))
-          echo "::set-output name=DEPLOYER_HOST::$(echo ${arr[1]})"
+        run: ./scripts/get-deployer-vars.sh
       - name: Deploy Application
         uses: andrewmarklloyd/pi-app-deployer-action@main
         env:
-          PI_APP_DEPLOYER_API_KEY: ${{ secrets.PI_APP_DEPLOYER_API_KEY }}
+          PI_APP_DEPLOYER_API_KEY: ${{ steps.vars.outputs.PI_APP_DEPLOYER_API_KEY }}
         with:
           repoName: andrewmarklloyd/pi-test
           manifestName: pi-test-amd64
