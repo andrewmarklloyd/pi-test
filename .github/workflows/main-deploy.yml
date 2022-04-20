@@ -26,4 +26,4 @@ jobs:
         with:
           repoName: andrewmarklloyd/pi-test
           manifestName: pi-test-amd64
-          host: https://${{ steps.vars.outputs.DEPLOYER_HOST }}.herokuapp.com
+          host: https://${{ steps.vars.outputs.DEPLOYER_APP }}.herokuapp.com
