@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Get deployer vars
         id: vars
-        run: ./scripts/get-deployer-vars.sh
+        run: source ./scripts/get-deployer-vars.sh
       - name: Deploy Application
         uses: andrewmarklloyd/pi-app-deployer-action@main
         env:
