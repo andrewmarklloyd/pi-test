@@ -15,7 +15,16 @@ jobs:
       - uses: actions/checkout@v2
       - name: Get deployer vars
         id: vars
-        run: source ./scripts/get-deployer-vars.sh
+        run: |
+          line=$(tail -n 1 test/integration-trigger.txt)
+          arr=($(echo $line | tr ";" "\n"))
+          host=${arr[1]}
+          echo "::set-output name=DEPLOYER_HOST::$(echo ${host})"
+          if [[ ${host} == "pi-app-deployer-staging" ]]; then
+            echo "::set-output name=PI_APP_DEPLOYER_API_KEY::$(echo ${PI_APP_DEPLOYER_API_KEY_STAGING})"
+          else
+            echo "::set-output name=PI_APP_DEPLOYER_API_KEY::$(echo ${PI_APP_DEPLOYER_API_KEY_PROD})"
+          fi
       - name: Deploy Application
         uses: andrewmarklloyd/pi-app-deployer-action@main
         env:
