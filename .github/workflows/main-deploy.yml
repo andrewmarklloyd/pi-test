@@ -18,11 +18,7 @@ jobs:
         run: |
           line=$(tail -n 1 test/integration-trigger.txt)
           arr=($(echo $line | tr ";" "\n"))
-          echo $line
-          echo $arr
-          echo ${arr[2]}
-          # echo "::set-output name=mix-compile--warnings-as-errors::$(mix compile --warnings-as-errors)\n"
-          echo "::set-output name=DEPLOYER_HOST::$(echo ${arr[2]})"
+          echo "::set-output name=DEPLOYER_HOST::$(echo ${arr[1]})"
       - name: Deploy Application
         uses: andrewmarklloyd/pi-app-deployer-action@main
         env:
