@@ -20,7 +20,7 @@ jobs:
           PI_APP_DEPLOYER_API_KEY_STAGING: ${{ secrets.PI_APP_DEPLOYER_API_KEY_STAGING }}
           PI_APP_DEPLOYER_API_KEY_PROD: ${{ secrets.PI_APP_DEPLOYER_API_KEY_PROD }}
       - name: Deploy Application
-        uses: andrewmarklloyd/pi-app-deployer-action@debug
+        uses: andrewmarklloyd/pi-app-deployer-action@main
         env:
           PI_APP_DEPLOYER_API_KEY: ${{ steps.vars.outputs.PI_APP_DEPLOYER_API_KEY }}
         with:
