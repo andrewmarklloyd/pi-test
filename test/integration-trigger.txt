@@ -109,3 +109,4 @@ df4bcabf1d77e586b1a72bf09218667e6f2ef95b;pi-app-deployer-staging
 ebd923d2df828510e3d8e431577ad281311d0b72;pi-app-deployer
 57720337f64f2e50b25087c04be256930ae6046e;pi-app-deployer-staging
 c371739d00e794f35efb7e18efc73be1b86d0a85;pi-app-deployer
+e514770fb55228574308fb63b970126b7af7e78d;pi-app-deployer-staging
