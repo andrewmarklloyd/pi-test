@@ -27,3 +27,4 @@ jobs:
           repoName: andrewmarklloyd/pi-test
           manifestName: pi-test-amd64
           host: https://${{ steps.vars.outputs.DEPLOYER_APP }}.herokuapp.com
+          artifactName: app_${{ github.sha }}
