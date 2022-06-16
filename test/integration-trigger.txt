@@ -136,3 +136,4 @@ dd390ddee392283eabba45588da572103dc2ea05;pi-app-deployer
 d05fc7bd8680347e3d0de6d4b4b7918e881894ab;pi-app-deployer
 d17cba7bef4c1c30f5f65361d71486cf6dad7265;pi-app-deployer
 0e4ea0a2f6f95c6aafdd170ba120d66776f86f5e;pi-app-deployer-staging
+836690b058b41a97d101a075bf51bc9ba1a228c3;pi-app-deployer-staging
